@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkers>
+	<checkerRole roleName = "片区总监" mapKey  = "listOfPQZJ" refModule="JH,BH">
+		<checkUser account="000466"  name="片区总监" ></checkUser>
+		<checkUser account="000444"  name="hxq-片区总监" ></checkUser>
+	</checkerRole>	
+	<checkerRole roleName = "办事处主管" mapKey="listOfBSCZG" refModule="JH,BH">
+		<checkUser account="000464" name  ="办事处主管" ></checkUser>
+		<checkUser account="000333" name  ="hxq-办事处主管" ></checkUser>
+	</checkerRole>
+	<checkerRole roleName = "市场部副总裁" mapKey="listOfSCBFZC" refModule="JH,BH">
+		<checkUser account="000467" name  ="市场部副总裁"></checkUser>
+		<checkUser account="000555" name  ="hxq-市场部副总裁"></checkUser>		
+	</checkerRole>
+	<checkerRole roleName = "公司审批人" mapKey="listOfSGSSPR" refModule="JH,BH">
+		<checkUser account="000470" name="公司审批人"></checkUser>
+		<checkUser account="000777" name="hxq-公司审批人"></checkUser>
+	</checkerRole>		
+	<checkerRole roleName = "产品部主管" mapKey="listOfCPBZG" refModule="JH,BH">
+		<checkUser account="000465" name="产品部主管"></checkUser>
+		<checkUser account="000222" name="hxq-产品部主管"></checkUser>
+	</checkerRole>			
+	<checkerRole roleName = "销管接口人" mapKey="listOfXGJKR" refModule="JH,BH">
+		<checkUser account="000471" name="销管接口人"></checkUser>
+		<checkUser account="000111" name="hxq-销管接口人"></checkUser>
+		
+	</checkerRole>			
+	<checkerRole roleName = "系统部总监" mapKey="listOfXTBZJ" refModule="JH,BH">
+		<checkUser account="000468"  name="系统部总监"></checkUser>
+		<checkUser account="000666"  name="hxq-系统部总监"></checkUser>
+	</checkerRole>		
+</checkers>

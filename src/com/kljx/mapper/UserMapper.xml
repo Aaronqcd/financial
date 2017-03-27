@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kljx.dao.UserDao">
+
+	<resultMap type="User" id="userResultMap">
+		<result property="id" column="id"/>
+		<result property="username" column="username"/>
+		<result property="password" column="password"/>
+		<result property="cellphone" column="cellphone"/>
+		<result property="email" column="email"/>
+		<result property="realName" column="realName"/>
+		<result property="status" column="status"/>
+		<result property="roleid" column="role_id"/>
+		<result property="isproduct3head" column="isproduct3head"/>
+		<result property="isemail" column="isemail"/>
+		
+	</resultMap>
+	
+	<!-- 根据用户名查找用户 -->
+	<select id="queryUserList" parameterType="User" resultMap="userResultMap">
+	    <![CDATA[
+		select * from user
+		]]>
+	</select>
+	
+	<insert id="insertUser" parameterType="User">
+		  insert into user(username, password, cellphone, email, realName, status, role_id, isproduct3head, isemail) 
+		         values(#{username}, #{password}, #{cellphone}, #{email}, #{realName}, #{status}, #{roleid}, #{isproduct3head}, #{isemail})
+	</insert>
+	
+</mapper>

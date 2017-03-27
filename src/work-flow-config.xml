@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workInfos>
+	<work id="work" >
+		<next-step id="next1"   nextNode= "next2">
+			<value>片区总监</value>
+		</next-step>		
+		<next-step id = "next2"  nextNode= "next3">
+			<value>办事处主管</value>
+		</next-step>		 
+		<next-step id = "next3"  nextNode= "next4">
+			<value>产品部主管</value>		
+		</next-step>	 
+		<next-step id = "next4"  nextNode= "next7">
+			<value>市场部副总裁</value>
+			<value>某某主任主管</value>
+		</next-step>
+		<next-step id = "next5"  nextNode= "next6">
+			<value>公司审批人</value>
+		</next-step>
+		<next-step id = "next7"  nextNode= "next5">
+			<value>系统部总监</value>
+		</next-step>
+		<next-step id = "next6"  >
+				<value>销管接口人</value>
+		</next-step>
+	</work>
+	
+</workInfos>
+

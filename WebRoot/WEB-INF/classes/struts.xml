@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC   
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"   
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" /> 
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <constant name="struts.action.extension" value="action"></constant>
+    
+	<!-- struts 标签主题风格 -->
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<constant name="struts.i18n.encoding" value="utf-8"/> 
+	<!-- string 工厂 -->
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<constant name="struts.multipart.maxSize" value="105760000" />
+	<!-- 定义基础包 -->	
+	<package name="basepackage" extends="struts-default" abstract="true">
+		<!-- 定义拦截栈 -->
+		<interceptors >
+			<interceptor name="authCheck" class="com.kljx.interceptor.AuthCheckInterceptor"></interceptor>
+			<!--基础拦截栈，不对start方法进行校验 -->
+			<interceptor-stack name="baseStack">	
+				<!-- <interceptor-ref name="authCheck"></interceptor-ref>	 -->		
+				<interceptor-ref name="fileUpload">
+					<param name="maximumSize">105760000</param>
+					<param name="allowedTypes"></param>
+				</interceptor-ref>
+				<interceptor-ref name="defaultStack">
+					<param name="workflow.excludeMethods">start</param>
+					<param name="validation.excludeMethods">start</param>
+				</interceptor-ref>
+				<interceptor-ref name="store">
+					<param name="operationMode">AUTOMATIC</param>
+				</interceptor-ref>				 
+				<interceptor-ref name="paramsPrepareParamsStack" />			
+			</interceptor-stack>
+		</interceptors>
+		 <!--设置默认拦截栈 -->		 
+		<default-interceptor-ref name="baseStack" />
+		<!-- 全局默认结果 -->
+		<global-results>
+			<!--<result name="redirect">/redirect.jsp</result>-->
+			<result name="login-index">/index.jsp</result>			
+		</global-results>
+		
+	</package>
+	<!-- 各模块的配置文件 -->
+	<include file="struts-sys.xml" />
+</struts>
